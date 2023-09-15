@@ -113,7 +113,13 @@ switch(dia){
                         fibonacci.push(fibonacci[i]+fibonacci[i+1])
                     }
                     console.log(fibonacci)
-
-
-        
-}}
+                    break;
+                default:
+                    alert("Nenhum desafio foi selecionado.")
+                    break;
+        break;
+            }
+    default: 
+        alert("Nenhum dia foi selecionado.")
+        break;     
+}
