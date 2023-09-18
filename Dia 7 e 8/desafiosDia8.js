@@ -1,1 +1,0 @@
-console.log("1º Dia dos entregáveis")
