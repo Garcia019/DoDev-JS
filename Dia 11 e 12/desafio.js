@@ -75,41 +75,62 @@ switch(dia){
         let senhas = []
         let nome
         let senha
+        let sair = true
         do{
-            let opcao = Number(promp("Selecione uma das opções abaixo:\n1 - Cadastrar\n2 - Login\n3 - Excluir\n4 - Encerrar"))
+            let opcao = Number(prompt("Selecione uma das opções abaixo:\n1 - Cadastrar\n2 - Login\n3 - Excluir\n4 - Encerrar"))
             switch(opcao){
                 case 1:
                     nome = prompt("Digite o nome de usuário a ser cadastrado:")
                     senha = prompt("Digite uma senha a ser criada:")
                     nomes.push(nome)
-                    senhas.push(senhas)
+                    senhas.push(senha)
                     alert(`Usuário ${nome} cadastrado com sucesso.`)
                     break;
                 case 2:
                     nome = prompt("Digite seu login:")
                     senha = prompt("Digite sua senha:")
-                    nomes.forEach(function(usuario,index){
-                        if (usuario === nome && senhas[index] === senha){
-                            alert("Login realizado com sucesso!")
-                        }else{
-                            alert("Senha ou Login inválidos!")
+                    let loginEstado = false
+                    for(let usuario of nomes){
+                        if (usuario === nome && senhas[nomes.indexOf(usuario)] === senha){
+                            loginEstado = true
+                            break;
                         }
-                    })
+                    }
+                    if(loginEstado){
+                        alert("Login realizado com sucesso!")
+                    }else{
+                        alert("Usuário ou Senha inválidos!")
+                    }
+                    
                     break;
                 case 3:
                     nome = prompt("Digite o nome do usuário a ser excluído:")
                     senha = prompt("Digite a senha do usuário para realizar a exclusão:")
-                    nomes.forEach(function(usuario,index){
-                        if (usuario === nome && senhas[index] === senha){
-                            alert("Senha correta!")
-                            nomes.splice(index, 1)
-                            senha.splice(index, 1)
-                        }else{
-                            alert(`Usuário ${usuario} excluído com sucesso!`)
+                    for(let usuario of nomes){
+                        if (usuario === nome && senhas[nomes.indexOf(usuario)] === senha){
+                            loginEstado = true
+                            break;
                         }
-                    })
+                    }
+                    if(loginEstado){
+                        nomes.splice(nome)
+                        senhas.splice(senha)
+                        alert("Usuário excluído com sucesso!")
+                    }else{
+                        alert("Usuário ou Senha inválidos!\nExclusão não realizada!")
+                    }
+                    break;
+                case 4:
+                    sair = false;
+                    alert("Encerrando sistema!")
+                    break;
+                default:
+                    alert("Opção inválida! ")
                     break;
             }
-        }while(true)
-
+        }while(sair)
+        break;
+    default:
+        alert("Opção inválida!")
+        break;
     }
