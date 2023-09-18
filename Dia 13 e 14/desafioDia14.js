@@ -8,13 +8,13 @@ function novosValores(){
 }
 function calcularAumento(salario, nome){
         if(salario < 1501){
-            alert(`Olá ${nome} seu salário teve aumento de 20% e agora é de R$ ${salario*1.2}.`)
+            alert(`Olá ${nome} seu salário atual é de ${salario}, com aumento de 20% e agora é de R$ ${salario*1.2}.`)
         }else if(salario < 2001){
-            alert(`Olá ${nome} seu salário teve aumento de 15% e agora é de R$ ${salario*1.15}.`)
+            alert(`Olá ${nome} seu salário atual é de ${salario}, com aumento de 15% e agora é de R$ ${salario*1.15}.`)
         }else if(salario < 3001){
-            alert(`Olá ${nome} seu salário teve aumento de 10% e agora é de R$ ${salario*1.10}.`)
+            alert(`Olá ${nome} seu salário atual é de ${salario}, com aumento de 10% e agora é de R$ ${salario*1.10}.`)
         }else{
-            alert(`Olá ${nome} seu salário teve aumento de 5% e agora é de R$ ${salario*1.05}.`)
+            alert(`Olá ${nome} seu salário atual é de ${salario}, com aumento de 5% e agora é de R$ ${salario*1.05}.`)
         }
         novosValores()
     }

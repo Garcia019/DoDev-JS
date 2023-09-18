@@ -18,10 +18,7 @@ function maxAge(list){
             quantidade++    
     }
     return quantidade}
-let dia = Number(prompt("Digite o Número correspondente ao dia a ser selecionado:\n1 - DIA 7 \n2 - DIA 8"))
-switch(dia){
-    case 1:
-        let desafio = Number(prompt("Digite o número correspondente ao desafio:\n 1 - Desafio 1\n 2 - Desafio 2"))
+let desafio = Number(prompt("Digite o número correspondente ao desafio:\n 1 - Desafio 1\n 2 - Desafio 2"))
         switch(desafio){
             case 1:
                 let contador = 1;
@@ -75,4 +72,3 @@ switch(dia){
                 alert(`A média dos valores inseridos foi de R$ ${somaLista(valores)/valores.length}`)
 
                 }
-}
